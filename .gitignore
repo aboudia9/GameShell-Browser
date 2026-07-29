@@ -12,3 +12,6 @@ locale/
 /gameshell*
 game shell*
 boxes-data.awk
+
+# Local-only project notes -- not for the public fork
+PROJECT_PLAN.md
