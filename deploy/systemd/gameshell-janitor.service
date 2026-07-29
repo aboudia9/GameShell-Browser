@@ -1,0 +1,15 @@
+[Unit]
+Description=GameShell session container reaper
+Documentation=https://github.com/aboudia9/GameShell-Browser
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=simple
+User=bou
+ExecStart=/home/bou/GameShell-Browser/deploy/gsh-janitor.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
