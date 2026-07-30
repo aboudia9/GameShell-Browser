@@ -1,0 +1,16 @@
+# Caddyfile — public entry point for browser GameShell.
+#
+# Install:
+#     sudo cp ~/GameShell-Browser/deploy/Caddyfile /etc/caddy/Caddyfile
+#     sudo systemctl reload caddy
+#
+# Caddy obtains and renews the Let's Encrypt certificate automatically -- there
+# is no cert configuration here on purpose. It needs port 80 reachable to pass
+# the ACME challenge, and the domain's A record must resolve to this machine.
+#
+# ttyd listens on 127.0.0.1:7682 only (see deploy/gsh-serve.sh), so this proxy
+# is the ONLY public way in. Do not open 7682 in ufw.
+
+gameshell.proai.org {
+	reverse_proxy 127.0.0.1:7682
+}
