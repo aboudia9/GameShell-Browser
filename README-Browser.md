@@ -72,6 +72,27 @@ you want to run X programs from inside GameShell. Refer to [this
 section](./doc/deps.md#running-GameShell-from-a-docker-container) of the user
 manual.
 
+
+Playing in a browser
+--------------------
+
+**This fork adds browser-based deployment.** Alongside the original game, it
+includes tooling to serve GameShell over the web, so players need nothing
+installed — just a browser and a URL. Each connection gets its own throwaway
+Docker container running a real bash shell, streamed to the browser by
+[ttyd](https://github.com/tsl0922/ttyd), with [Caddy](https://caddyserver.com)
+providing automatic HTTPS.
+
+This was built to give first-year CS students a zero-setup way to reach a real
+shell, since installation is often the first thing that stops them.
+
+See **[browser-deployment.md](browser-deployment.md)** for the full deployment
+guide, and `deploy/` for the scripts, systemd units, and Caddy config.
+
+Everything else in this repository is unchanged from
+[upstream](https://github.com/phyver/GameShell).
+
+
 Github Codespaces (or VSCode)
 -----------------------------
 
@@ -169,4 +190,3 @@ it required is by sending an actual postcard to
   73376 Le Bourget du Lac
   FRANCE
 ```
-
